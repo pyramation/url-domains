@@ -4,7 +4,9 @@ export const middleware = ({
   domain = 'domain'
 } = {}) => async (req, res, next) => {
   const parsed = parseReq(req);
-  req[subdomains] = parsed.subdomains;
-  req[domain] = parsed.domain;
+  req.urlDomains = {
+    [subdomains]: parsed.subdomains,
+    [domain]: parsed.domain
+  };
   return next();
 };

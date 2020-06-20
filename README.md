@@ -33,8 +33,8 @@ yarn add @pyramation/url-domains
   app.use(parseDomains());
 
   app.use(async (req, res, next) => {
-    // have fun with req.domain and req.subdomains!
-    await fn(req.domain, req.subdomains);
+    // have fun!
+    await fn(req.urlDomains.domain, req.urlDomains.subdomains);
   });
 ```
 
