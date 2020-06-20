@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`parses URLs 127.0.0.1:8888 1`] = `
+Object {
+  "domain": "127.0.0.1",
+  "subdomains": Array [],
+}
+`;
+
+exports[`parses URLs admin.basecrypt.com:8888 1`] = `
+Object {
+  "domain": "basecrypt.com",
+  "subdomains": Array [
+    "admin",
+  ],
+}
+`;
+
+exports[`parses URLs admin.localhost:8888 1`] = `
+Object {
+  "domain": "localhost",
+  "subdomains": Array [
+    "admin",
+  ],
+}
+`;
+
+exports[`parses URLs admin.web.basecrypt.com:8888 1`] = `
+Object {
+  "domain": "basecrypt.com",
+  "subdomains": Array [
+    "admin",
+    "web",
+  ],
+}
+`;
+
+exports[`parses URLs coolio.webby.localhost:8888 1`] = `
+Object {
+  "domain": "localhost",
+  "subdomains": Array [
+    "coolio",
+    "webby",
+  ],
+}
+`;
+
+exports[`parses URLs localhost:8888 1`] = `
+Object {
+  "domain": "localhost",
+  "subdomains": Array [],
+}
+`;
+
+exports[`parses URLs www.admin.localhost:8888 1`] = `
+Object {
+  "domain": "localhost",
+  "subdomains": Array [
+    "admin",
+  ],
+}
+`;
