@@ -22,6 +22,7 @@ export const parseUrl = url => {
   }
 
   return {
+    hostname: url.hostname,
     domain,
     subdomains
   };
