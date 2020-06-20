@@ -1,4 +1,4 @@
-import { parseReq } from '../src';
+import { parseReq, middleware as parseMiddleware } from '../src';
 import cases from 'jest-in-case';
 
 const fixtures = [
@@ -30,6 +30,7 @@ const fixtures = [
     originalUrl: '/graphiql?yo=1'
   }
 ];
+
 cases(
   'parses URLs',
   options => {
@@ -40,6 +41,23 @@ cases(
       }
     };
     expect(parseReq(req)).toMatchSnapshot();
+  },
+  fixtures.map(fix => {
+    return { ...fix, name: fix.host };
+  })
+);
+
+cases(
+  'parses reqs',
+  async options => {
+    const req = {
+      ...options,
+      get: () => {
+        return options.host;
+      }
+    };
+    await parseMiddleware()(req, null, () => {});
+    expect(req).toMatchSnapshot();
   },
   fixtures.map(fix => {
     return { ...fix, name: fix.host };

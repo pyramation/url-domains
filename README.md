@@ -4,7 +4,7 @@ for use with express
 
 ## why?
 
-Because, express requies that you do things like this when you need `req.subdomains` on `localhost`:
+Because, express requires that you do things like this when you need `req.subdomains` on `localhost`:
 
 ```js
   if (env.SERVER_HOST === 'localhost') {
@@ -22,22 +22,36 @@ So why not just make a `subdomains` object you can trust no matter what?
 yarn add @pyramation/url-domains
 ```
 
-```js
-    import {
-        parseReq
-    } from '@pyramation/url-domains';
+### middleware
 
+```js
+  import {
+    middleware as parseDomains
+  } from '@pyramation/url-domains';
+
+
+  app.use(parseDomains());
 
   app.use(async (req, res, next) => {
+    // have fun with req.domain and req.subdomains!
+    await fn(req.domain, req.subdomains);
+  });
+```
 
+### manual usage
+
+```js
+  import {
+    parseReq
+  } from '@pyramation/url-domains';
+
+  app.use(async (req, res, next) => {
     const {
-        domains,
+        domain,
         subdomains
     } = parseReq(req);
 
-    await doSomethingWithSubdomains(subdomains);
-
+    // cheers!!
+    await fn(domain, subdomains);
   });
-
-
 ```

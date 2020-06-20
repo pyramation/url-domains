@@ -60,3 +60,99 @@ Object {
   ],
 }
 `;
+
+exports[`parses reqs 127.0.0.1:8888 1`] = `
+Object {
+  "domain": "127.0.0.1",
+  "get": [Function],
+  "host": "127.0.0.1:8888",
+  "name": "127.0.0.1:8888",
+  "originalUrl": "/graphiql?yo=1",
+  "protocol": "http",
+  "subdomains": Array [],
+}
+`;
+
+exports[`parses reqs admin.basecrypt.com:8888 1`] = `
+Object {
+  "domain": "basecrypt.com",
+  "get": [Function],
+  "host": "admin.basecrypt.com:8888",
+  "name": "admin.basecrypt.com:8888",
+  "originalUrl": "/",
+  "protocol": "http",
+  "subdomains": Array [
+    "admin",
+  ],
+}
+`;
+
+exports[`parses reqs admin.localhost:8888 1`] = `
+Object {
+  "domain": "localhost",
+  "get": [Function],
+  "host": "admin.localhost:8888",
+  "name": "admin.localhost:8888",
+  "originalUrl": "/",
+  "protocol": "http",
+  "subdomains": Array [
+    "admin",
+  ],
+}
+`;
+
+exports[`parses reqs admin.web.basecrypt.com:8888 1`] = `
+Object {
+  "domain": "basecrypt.com",
+  "get": [Function],
+  "host": "admin.web.basecrypt.com:8888",
+  "name": "admin.web.basecrypt.com:8888",
+  "originalUrl": "/",
+  "protocol": "http",
+  "subdomains": Array [
+    "admin",
+    "web",
+  ],
+}
+`;
+
+exports[`parses reqs coolio.webby.localhost:8888 1`] = `
+Object {
+  "domain": "localhost",
+  "get": [Function],
+  "host": "coolio.webby.localhost:8888",
+  "name": "coolio.webby.localhost:8888",
+  "originalUrl": "/graphiql?yo=1",
+  "protocol": "http",
+  "subdomains": Array [
+    "coolio",
+    "webby",
+  ],
+}
+`;
+
+exports[`parses reqs localhost:8888 1`] = `
+Object {
+  "domain": "localhost",
+  "get": [Function],
+  "host": "localhost:8888",
+  "name": "localhost:8888",
+  "originalUrl": "/",
+  "protocol": "http",
+  "subdomains": Array [],
+}
+`;
+
+exports[`parses reqs www.admin.localhost:8888 1`] = `
+Object {
+  "domain": "localhost",
+  "get": [Function],
+  "host": "www.admin.localhost:8888",
+  "name": "www.admin.localhost:8888",
+  "originalUrl": "/",
+  "protocol": "http",
+  "subdomains": Array [
+    "admin",
+  ],
+}
+`;
