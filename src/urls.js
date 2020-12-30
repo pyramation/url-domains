@@ -1,6 +1,9 @@
 const ipRegExp = /^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$/;
 
 export const parseUrl = url => {
+  if (typeof url === 'string') {
+    url = new URL(url);
+  }
   let { hostname } = url;
 
   hostname = hostname.replace(/^www\./, '');
